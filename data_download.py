@@ -106,5 +106,41 @@ if response.status_code == 200:
 else:
     print(f"Error: {response.status_code} - {response.text}")
 
+#--------------------------------------------------------------------------------------------------
+# use below code to plot the candlestick chart for the downloaded data
 
+import pandas as pd
+import matplotlib.pyplot as plt
+import mplfinance as mpf
+
+# Read data from CSV file
+csv_file = 'output.csv'
+df = pd.read_csv(csv_file, parse_dates=['Timestamp'], index_col='Timestamp')
+
+# Resample to 5-minute intervals
+df_5min = df.resample('5T').agg({
+    'Open': 'first',
+    'High': 'max',
+    'Low': 'min',
+    'Close': 'last',
+    'Volume': 'sum',
+    'Turnover': 'sum'
+}).dropna()
+
+# Calculate 9-period and 21-period EMA
+df_5min['9EMA'] = df_5min['Close'].ewm(span=9, adjust=False).mean()
+df_5min['21EMA'] = df_5min['Close'].ewm(span=21, adjust=False).mean()
+
+# Visualize data in candlestick form
+apds = [
+    mpf.make_addplot(df_5min['9EMA'], color='blue'),
+    mpf.make_addplot(df_5min['21EMA'], color='red')
+]
+
+# Plot with mplfinance and set plot size
+mpf.plot(df_5min, type='candle', style='charles', addplot=apds, figsize=(15, 7), title='5-Minute Candlestick Chart with EMAs', ylabel='Price')
+
+plt.show()
+
+#-----------------------------------------End of Script---------------------------------------------------------------------------------------
 
