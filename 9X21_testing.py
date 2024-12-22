@@ -1,3 +1,7 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
 # Load Data
 data = pd.read_csv(r"C:\Users\cheta\OneDrive\Chetan\Destiny\archive\NIFTY 50_minute.csv")
 data['date'] = pd.to_datetime(data['date'])  # Ensure 'date' is in datetime format
