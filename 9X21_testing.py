@@ -18,8 +18,8 @@ data['21EMA'] = data['close'].ewm(span=21, adjust=False).mean()
 
 # Parameters
 rr_ratios = [1, 2]  # Risk-reward ratios to test
-threshold_9ema = 0.25  # Threshold for 9 EMA re-entry
-threshold_21ema = 0.25  # Threshold for 21 EMA re-entry
+threshold_9ema = 0.10  # Threshold for 9 EMA re-entry
+threshold_21ema = 0.10  # Threshold for 21 EMA re-entry
 max_trades_per_day = 3
 
 results = []
