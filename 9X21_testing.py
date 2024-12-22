@@ -1,3 +1,8 @@
+# Load Data
+data = pd.read_csv(r"C:\Users\cheta\OneDrive\Chetan\Destiny\archive\NIFTY 50_minute.csv")
+data['date'] = pd.to_datetime(data['date'])  # Ensure 'date' is in datetime format
+data.set_index('date', inplace=True)
+
 # Calculate EMA
 data['9EMA'] = data['close'].ewm(span=9, adjust=False).mean()
 data['21EMA'] = data['close'].ewm(span=21, adjust=False).mean()
