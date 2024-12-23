@@ -1,5 +1,7 @@
 import pandas as pd
 
+# This script is not working
+
 # Load the Excel file
 input_file_path = r"C:\Users\cheta\OneDrive\Chetan\Destiny\archive\nifty_50_1day_1min.xlsx"
 df = pd.read_excel(input_file_path)
