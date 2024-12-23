@@ -43,4 +43,6 @@ df.to_excel(output_file_path, index=False)
 print(f"Processed data saved to {output_file_path}")
 
 # Inspect the DataFrame's structure and column data types again
-df.info()
+df.info() # date column is still object
+
+
