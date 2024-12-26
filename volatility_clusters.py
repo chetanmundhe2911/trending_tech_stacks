@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Step 1: Load the CSV data
-data = pd.read_csv(r'C:\Users\cheta\OneDrive\Chetan\Destiny\archive\NIFTY 50_minute.csv')
+data = pd.read_csv(r'NIFTY 50_minute.csv')
 
 # Step 2: Convert the 'date' column to datetime format
 data['date'] = pd.to_datetime(data['date'])
