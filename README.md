@@ -26,51 +26,43 @@ git lfs install initializes Git LFS in the environment.
 
 
 3️⃣ Clone Your Repository
-bash
+```
+git clone https://gitlab.com/juliensimon/huggingface-demos.git /home/ec2-user/SageMaker/huggingface-demos
+```
 
-
-1
-git clone https://gitlab.com/juliensimon/huggingface-demos.git /home/ec2-user/SageMaker/huggingface-demos  
 🛠 What this does?
 
 ✅ Clones the huggingface-demos repository from GitLab into the /home/ec2-user/SageMaker/huggingface-demos directory.
 
 4️⃣ Set Git Credential Cache for 24 Hours
-bash
-
-
-1
-2
-3
+```
 # Set credential helper for 24 hours  
 git config --global credential.helper cache  
-git config --global credential.helper "cache --timeout=86400"  
+git config --global credential.helper "cache --timeout=86400"
+
+```
 🔐 Stores Git credentials securely for 24 hours (86400 seconds) to avoid repeated authentication requests.
 
+
 5️⃣ Install VS Code Server
-bash
 
-
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
 # Install VS Code Server  
+
+```
 cd /home/ec2-user/SageMaker  
 curl -LO https://github.com/aws-samples/amazon-sagemaker-codeserver/releases/download/v0.1.5/amazon-sagemaker-codeserver-0.1.5.tar.gz  
-tar -xvzf amazon-sagemaker-codeserver-0.1.5.tar.gz  
+tar -xvzf amazon-sagemaker-codeserver-0.1.5.tar.gz
+```
 
 # Run installation scripts  
+
+```
 cd amazon-sagemaker-codeserver/install-scripts/notebook-instances  
 chmod +x install-codeserver.sh setup-codeserver.sh  
 sudo ./install-codeserver.sh  
-sudo ./setup-codeserver.sh  
+sudo ./setup-codeserver.sh
+```
+
 ⚡ What this does?
 
 ✅ Downloads and installs VS Code Server in SageMaker Notebook Instance.
@@ -79,10 +71,7 @@ sudo ./setup-codeserver.sh
 ✅ Runs installation and setup scripts to make VS Code Server available inside Jupyter Notebook.
 
 6️⃣ Start the Notebook Instance
-bash
 
-
-1
 export HOME=/home/ec2-user  
 💡 Ensures the HOME environment variable is set correctly before using the notebook.
 
