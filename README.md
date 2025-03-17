@@ -2,15 +2,17 @@
 This guide walks you through setting up an AWS SageMaker Notebook Instance with Git Large File Storage (LFS) and VS Code Server for an enhanced development experience.
 
 1️⃣ Set Up Environment Variables
-bash
 
 
+```
 export HOME=/home/ec2-user
 This sets the HOME environment variable to /home/ec2-user, which is the default home directory for an EC2/SageMaker instance user.
 2️⃣ Install Git LFS (Large File Storage)
-bash
+```
+
 
 # Install and enable Git LFS  
+```
 curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.rpm.sh | sudo bash  
 sudo yum install git-lfs -y  
 git lfs install  
@@ -19,6 +21,10 @@ git lfs install
 curl fetches the installation script for Git LFS.
 yum install git-lfs -y installs the package on the EC2/SageMaker instance.
 git lfs install initializes Git LFS in the environment.
+
+```
+
+
 3️⃣ Clone Your Repository
 bash
 
