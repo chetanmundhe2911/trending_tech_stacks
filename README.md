@@ -71,32 +71,19 @@ sudo ./setup-codeserver.sh
 ✅ Runs installation and setup scripts to make VS Code Server available inside Jupyter Notebook.
 
 6️⃣ Start the Notebook Instance
-
+```
 export HOME=/home/ec2-user  
 💡 Ensures the HOME environment variable is set correctly before using the notebook.
+```
 
 7️⃣ Enable Git LFS and VS Code Server on Startup
-bash
 
-
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
 # Install and enable Git LFS  
 # This must be repeated each time because the install is not persistent  
-curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.rpm.sh | sudo bash  
+```curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.rpm.sh | sudo bash  
 sudo yum install git-lfs -y  
-git lfs install  
+git lfs install
+```
 
 # Set credential helper for 24 hours  
 git config --global credential.helper cache  
