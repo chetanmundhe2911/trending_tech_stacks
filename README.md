@@ -83,7 +83,7 @@ export HOME=/home/ec2-user
 ```curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.rpm.sh | sudo bash  
 sudo yum install git-lfs -y  
 git lfs install
-```
+
 
 # Set credential helper for 24 hours  
 git config --global credential.helper cache  
@@ -91,7 +91,9 @@ git config --global credential.helper "cache --timeout=86400"
 
 # Enable VS Code server  
 cd /home/ec2-user/SageMaker/amazon-sagemaker-codeserver/install-scripts/notebook-instances  
-sudo ./setup-codeserver.sh  
+sudo ./setup-codeserver.sh
+
+```
 🔄 Why do this every time?
 
 ☑️ Git LFS setup is not persistent across reboots, so it must be re-installed each time the notebook starts.
@@ -103,6 +105,7 @@ sudo ./setup-codeserver.sh
 ✅ Git credentials are cached for 24 hours to avoid repeated login prompts.
 ✅ VS Code Server is installed and configured for enhanced coding inside SageMaker.
 ✅ Startup Commands help maintain the environment after rebooting the instance.
+
 🚀 NEXT STEPS
 ✔ Access VS Code Inside SageMaker
 
