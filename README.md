@@ -78,8 +78,8 @@ export HOME=/home/ec2-user
 
 7️⃣ Enable Git LFS and VS Code Server on Startup
 
-# Install and enable Git LFS  
-# This must be repeated each time because the install is not persistent  
+### Install and enable Git LFS  
+### This must be repeated each time because the install is not persistent  
 ```curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.rpm.sh | sudo bash  
 sudo yum install git-lfs -y  
 git lfs install
