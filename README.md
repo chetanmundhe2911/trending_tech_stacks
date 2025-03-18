@@ -33,9 +33,9 @@ git clone https://gitlab.com/juliensimon/huggingface-demos.git /home/ec2-user/Sa
 🛠 What this does?
 
 ✅ Clones the huggingface-demos repository from GitLab into the /home/ec2-user/SageMaker/huggingface-demos directory.
-
-4️⃣ Set Git Credential Cache for 24 Hours
+4️⃣ Set Git Credential Cache for 24 Hour
 ```
+
 # Set credential helper for 24 hours  
 git config --global credential.helper cache  
 git config --global credential.helper "cache --timeout=86400"
@@ -45,8 +45,8 @@ git config --global credential.helper "cache --timeout=86400"
 
 
 5️⃣ Install VS Code Server
-
 # Install VS Code Server  
+
 
 ```
 cd /home/ec2-user/SageMaker  
@@ -80,6 +80,7 @@ export HOME=/home/ec2-user
 
 ##### Install and enable Git LFS  
 ##### This must be repeated each time because the install is not persistent  
+
 ```curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.rpm.sh | sudo bash  
 sudo yum install git-lfs -y  
 git lfs install
