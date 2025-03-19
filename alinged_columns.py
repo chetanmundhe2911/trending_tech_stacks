@@ -25,3 +25,34 @@ df.to_csv(transformed_file, index=False)
 
 # View the first few rows to verify
 df.head()
+
+```
+How to Fix in QuickSight:
+Replace "business_category" with "aligned_business_category"
+Your transformed dataset has a new column "aligned_business_category" that correctly maps "Gaming" as "Betting Industry" and "SportPesa" as "Betting Company - SportPesa".
+Action:
+Remove "business_category" from the Group/Color section and add "aligned_business_category" instead.
+Ensure "sportpesa_v_gaming" is also part of the Grouping
+"sportpesa_v_gaming" determines whether a transaction belongs to "Gaming", "SportPesa", or "Other".
+Keep it as a secondary grouping or use it to filter data.
+Check the VALUE Field
+The Value field (SelectedMetricField (Custom)) is likely tx_value or tx_count.
+Make sure that it represents either:
+Total Transaction Count (tx_count)
+Total Transaction Value (tx_value)
+If needed, sum the total value for each "aligned_business_category".
+Review Small Multiples (Options_CP)
+If this field segments the data further, ensure it does not exclude "Gaming" or "SportPesa" transactions from the main visualization.
+Expected Results After This Fix:
+✅ "Gaming" transactions will now appear as "Betting Industry" in the chart!
+✅ "SportPesa" transactions will correctly appear under "Betting Company - SportPesa" instead of "Other"!
+✅ Your pie chart will now accurately compare "Gaming", "SportPesa", and other business categories.
+
+Final Step
+After updating this, check if the pie chart labels clearly reflect "Betting Industry" and "Betting Company - SportPesa".
+If the changes don’t reflect immediately, try refreshing or updating the dataset in QuickSight.
+
+
+
+```
+
