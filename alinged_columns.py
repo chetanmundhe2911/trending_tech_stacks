@@ -27,66 +27,66 @@ df.to_csv(transformed_file, index=False)
 df.head()
 
 ```
-How to Fix in QuickSight:
-Replace "business_category" with "aligned_business_category"
-Your transformed dataset has a new column "aligned_business_category" that correctly maps "Gaming" as "Betting Industry" and "SportPesa" as "Betting Company - SportPesa".
-Action:
-Remove "business_category" from the Group/Color section and add "aligned_business_category" instead.
-Ensure "sportpesa_v_gaming" is also part of the Grouping
-"sportpesa_v_gaming" determines whether a transaction belongs to "Gaming", "SportPesa", or "Other".
-Keep it as a secondary grouping or use it to filter data.
-Check the VALUE Field
-The Value field (SelectedMetricField (Custom)) is likely tx_value or tx_count.
-Make sure that it represents either:
-Total Transaction Count (tx_count)
-Total Transaction Value (tx_value)
-If needed, sum the total value for each "aligned_business_category".
-Review Small Multiples (Options_CP)
-If this field segments the data further, ensure it does not exclude "Gaming" or "SportPesa" transactions from the main visualization.
-Expected Results After This Fix:
-✅ "Gaming" transactions will now appear as "Betting Industry" in the chart!
-✅ "SportPesa" transactions will correctly appear under "Betting Company - SportPesa" instead of "Other"!
-✅ Your pie chart will now accurately compare "Gaming", "SportPesa", and other business categories.
+# How to Fix in QuickSight:
+# Replace "business_category" with "aligned_business_category"
+# Your transformed dataset has a new column "aligned_business_category" that correctly maps "Gaming" as "Betting Industry" and "SportPesa" as "Betting Company - SportPesa".
+# Action:
+# Remove "business_category" from the Group/Color section and add "aligned_business_category" instead.
+# Ensure "sportpesa_v_gaming" is also part of the Grouping
+# "sportpesa_v_gaming" determines whether a transaction belongs to "Gaming", "SportPesa", or "Other".
+# Keep it as a secondary grouping or use it to filter data.
+# Check the VALUE Field
+# The Value field (SelectedMetricField (Custom)) is likely tx_value or tx_count.
+# Make sure that it represents either:
+# Total Transaction Count (tx_count)
+# Total Transaction Value (tx_value)
+# If needed, sum the total value for each "aligned_business_category".
+# Review Small Multiples (Options_CP)
+# If this field segments the data further, ensure it does not exclude "Gaming" or "SportPesa" transactions from the main visualization.
+# Expected Results After This Fix:
+# ✅ "Gaming" transactions will now appear as "Betting Industry" in the chart!
+# ✅ "SportPesa" transactions will correctly appear under "Betting Company - SportPesa" instead of "Other"!
+# ✅ Your pie chart will now accurately compare "Gaming", "SportPesa", and other business categories.
 
-Final Step
-After updating this, check if the pie chart labels clearly reflect "Betting Industry" and "Betting Company - SportPesa".
-If the changes don’t reflect immediately, try refreshing or updating the dataset in QuickSight.
+# Final Step
+# After updating this, check if the pie chart labels clearly reflect "Betting Industry" and "Betting Company - SportPesa".
+# If the changes don’t reflect immediately, try refreshing or updating the dataset in QuickSight.
 
 
-```
-1️⃣ Where does Gaming fall in the business categories?
-Previously, many transactions under "Gaming" were being categorized as "Other", which made it difficult to track them separately.
-Now, all Gaming transactions are explicitly categorized as "Betting Industry" in the new column (aligned_business_category).
-Dashboard Fix:
-Use "aligned_business_category" instead of "business_category" to ensure Gaming's transactions show under "Betting Industry" in visualizations.
+# ```
+# 1️⃣ Where does Gaming fall in the business categories?
+# Previously, many transactions under "Gaming" were being categorized as "Other", which made it difficult to track them separately.
+# Now, all Gaming transactions are explicitly categorized as "Betting Industry" in the new column (aligned_business_category).
+# Dashboard Fix:
+# Use "aligned_business_category" instead of "business_category" to ensure Gaming's transactions show under "Betting Industry" in visualizations.
 
-2️⃣ Where does SportPesa fall?
-In the original dataset, SportPesa transactions were mostly under "Other".
-Now, transactions under "SportPesa" are grouped as "Betting Company - SportPesa" instead of "Other", making them clearly visible on the dashboard.
-Dashboard Fix:
-Create a filter or breakdown where "SportPesa" is properly displayed under "Betting Company - SportPesa".
+# 2️⃣ Where does SportPesa fall?
+# In the original dataset, SportPesa transactions were mostly under "Other".
+# Now, transactions under "SportPesa" are grouped as "Betting Company - SportPesa" instead of "Other", making them clearly visible on the dashboard.
+# Dashboard Fix:
+# Create a filter or breakdown where "SportPesa" is properly displayed under "Betting Company - SportPesa".
 
-3️⃣ How do they compare relative to all other categories?
-Before, "Gaming" and "SportPesa" were mixed into "Other" and lacked uniqueness for clear comparisons.
-Now, with distinct categories (Betting Industry & Betting Company - SportPesa), you can:
-Compare transaction volumes & values of "Gaming" vs "SportPesa" vs "Other" business categories.
-Keep Finance & Investment, Retail, and other sectors intact in your dashboard visuals.
-Dashboard Fix:
-Modify your pie chart to use "aligned_business_category" so each category is properly segmented.
-How to Implement in QuickSight (or Any BI Tool)
-Load the updated dataset (transformed_data.csv) into QuickSight.
-Change the fields used in charts:
-Replace business_category with aligned_business_category in the data visualization.
-Ensure "Betting Industry" and "Betting Company - SportPesa" appear correctly.
-Modify Pie Chart or Bar Chart settings:
-Group the data based on "aligned_business_category".
-Compare their transaction value or count to see the share of gaming & betting.
-Check if new categories (Gaming & SportPesa) are now appearing separately in the business split.
-Outcome on the Dashboard
+# 3️⃣ How do they compare relative to all other categories?
+# Before, "Gaming" and "SportPesa" were mixed into "Other" and lacked uniqueness for clear comparisons.
+# Now, with distinct categories (Betting Industry & Betting Company - SportPesa), you can:
+# Compare transaction volumes & values of "Gaming" vs "SportPesa" vs "Other" business categories.
+# Keep Finance & Investment, Retail, and other sectors intact in your dashboard visuals.
+# Dashboard Fix:
+# Modify your pie chart to use "aligned_business_category" so each category is properly segmented.
+# How to Implement in QuickSight (or Any BI Tool)
+# Load the updated dataset (transformed_data.csv) into QuickSight.
+# Change the fields used in charts:
+# Replace business_category with aligned_business_category in the data visualization.
+# Ensure "Betting Industry" and "Betting Company - SportPesa" appear correctly.
+# Modify Pie Chart or Bar Chart settings:
+# Group the data based on "aligned_business_category".
+# Compare their transaction value or count to see the share of gaming & betting.
+# Check if new categories (Gaming & SportPesa) are now appearing separately in the business split.
+# Outcome on the Dashboard
 
-✅ The left pie chart (SportPesa, Gaming, Others) will now map correctly to the business categories in the right chart.
-✅ Gaming transactions would be properly classified under Betting Industry, not "Other".
-✅ SportPesa will be treated as a distinct business category for clearer analysis.
+# ✅ The left pie chart (SportPesa, Gaming, Others) will now map correctly to the business categories in the right chart.
+# ✅ Gaming transactions would be properly classified under Betting Industry, not "Other".
+# ✅ SportPesa will be treated as a distinct business category for clearer analysis.
 
 
 
