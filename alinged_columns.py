@@ -81,8 +81,7 @@ df.head()
 # Modify Pie Chart or Bar Chart settings:
 # Group the data based on "aligned_business_category".
 # Compare their transaction value or count to see the share of gaming & betting.
-# Check if new categories (Gaming & SportPesa) are now appearing separately in the business split.
-# Outcome on the Dashboard
+
 
 # ✅ The left pie chart (SportPesa, Gaming, Others) will now map correctly to the business categories in the right chart.
 # ✅ Gaming transactions would be properly classified under Betting Industry, not "Other".
