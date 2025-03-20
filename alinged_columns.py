@@ -27,14 +27,6 @@ df.to_csv(transformed_file, index=False)
 df.head()
 
 ```
-Quicksight code for calculated field
-ifelse(
-    {sportpesa_v_gaming} = 'Gaming', 'Gaming Industry',  -- Updated to Gaming Industry
-    {sportpesa_v_gaming} = 'SportPesa', 'Betting Company - SportPesa',  
-    {business_category}  // Keep all other categories unchanged
-)
-
-
 
 ```
 # How to Fix in QuickSight:
