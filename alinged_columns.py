@@ -1,8 +1,6 @@
 import pandas as pd
 
-# Load the dataset
-file_path = "data.csv"  # Change this to your actual file path
-df = pd.read_csv(file_path)
+
 
 # Define mapping logic
 def categorize_business(row):
