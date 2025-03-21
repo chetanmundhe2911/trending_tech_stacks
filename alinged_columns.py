@@ -37,7 +37,6 @@ df.head()
 # Keep it as a secondary grouping or use it to filter data.
 # Check the VALUE Field
 # The Value field (SelectedMetricField (Custom)) is likely tx_value or tx_count.
-# Make sure that it represents either:
 # Total Transaction Count (tx_count)
 # Total Transaction Value (tx_value)
 # If needed, sum the total value for each "aligned_business_category".
