@@ -28,7 +28,7 @@ df.head()
 
 ```
 # How to Fix in QuickSight:
-# Replace "business_category" with "aligned_business_category"
+
 # Your transformed dataset has a new column "aligned_business_category" that correctly maps "Gaming" as "Betting Industry" and "SportPesa" as "Betting Company - SportPesa".
 # Action:
 # Remove "business_category" from the Group/Color section and add "aligned_business_category" instead.
