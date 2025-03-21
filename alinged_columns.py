@@ -83,7 +83,6 @@ df.head()
 # Compare their transaction value or count to see the share of gaming & betting.
 
 
-# ✅ The left pie chart (SportPesa, Gaming, Others) will now map correctly to the business categories in the right chart.
 # ✅ Gaming transactions would be properly classified under Betting Industry, not "Other".
 # ✅ SportPesa will be treated as a distinct business category for clearer analysis.
 
