@@ -27,7 +27,7 @@ df.head()
 ```
 
 
-# Remove "business_category" from the Group/Color section and add "aligned_business_category" instead.
+
 # Ensure "sportpesa_v_gaming" is also part of the Grouping
 # "sportpesa_v_gaming" determines whether a transaction belongs to "Gaming", "SportPesa", or "Other".
 # Keep it as a secondary grouping or use it to filter data.
