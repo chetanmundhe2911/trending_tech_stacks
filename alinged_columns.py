@@ -43,9 +43,7 @@ df.head()
 # ✅ "SportPesa" transactions will correctly appear under "Betting Company - SportPesa" instead of "Other"!
 # ✅ Your pie chart will now accurately compare "Gaming", "SportPesa", and other business categories.
 
-# Final Step
-# After updating this, check if the pie chart labels clearly reflect "Betting Industry" and "Betting Company - SportPesa".
-# If the changes don’t reflect immediately, try refreshing or updating the dataset in QuickSight.
+
 
 
 # ```
