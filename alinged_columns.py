@@ -26,11 +26,7 @@ df.head()
 
 ```
 
-```
-# How to Fix in QuickSight:
 
-# Your transformed dataset has a new column "aligned_business_category" that correctly maps "Gaming" as "Betting Industry" and "SportPesa" as "Betting Company - SportPesa".
-# Action:
 # Remove "business_category" from the Group/Color section and add "aligned_business_category" instead.
 # Ensure "sportpesa_v_gaming" is also part of the Grouping
 # "sportpesa_v_gaming" determines whether a transaction belongs to "Gaming", "SportPesa", or "Other".
