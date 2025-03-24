@@ -40,8 +40,6 @@ df.head()
 # If this field segments the data further, ensure it does not exclude "Gaming" or "SportPesa" transactions from the main visualization.
 # Expected Results After This Fix:
 # ✅ "Gaming" transactions will now appear as "Betting Industry" in the chart!
-# ✅ "SportPesa" transactions will correctly appear under "Betting Company - SportPesa" instead of "Other"!
-# ✅ Your pie chart will now accurately compare "Gaming", "SportPesa", and other business categories.
 
 
 
