@@ -71,7 +71,7 @@ df.head()
 # Ensure "Betting Industry" and "Betting Company - SportPesa" appear correctly.
 # Modify Pie Chart or Bar Chart settings:
 # Group the data based on "aligned_business_category".
-# Compare their transaction value or count to see the share of gaming & betting.
+
 
 
 # ✅ Gaming transactions would be properly classified under Betting Industry, not "Other".
